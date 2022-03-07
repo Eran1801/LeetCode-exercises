@@ -7,7 +7,7 @@ Open brackets must be closed by the same type of brackets.
 Open brackets must be closed in the correct order.
 '''
 
-from collections import deque
+from collections import deque # deque is a Doubly Ended Queue
 
 class Solution:
     def isValid(self, s: str) -> bool:
