@@ -12,21 +12,21 @@ from collections import deque
 class Solution:
     def isValid(self, s: str) -> bool:
         
-        stack = deque()
+        queue = deque()
         
         open_close = { '}':'{' , ']':'[' , ')':'(' }
         
         for p in s:
             if p in open_close:
                 # check if the stack is not empty and that the top value in the stack is equal to p
-                if stack and stack[-1] == open_close[p]:
-                    stack.pop() # delete this brackets from the stack  
+                if queue and queue[-1] == open_close[p]:
+                    queue.pop() # delete this brackets from the stack  
                 else: # if its a close brackets witout the open brackets 
                     return False
             else:
-                stack.append(p)
+                queue.append(p)
                 
-        return True if not stack else False # means if the stack is empty return true false otherwise
+        return True if not queue else False # means if the stack is empty return true false otherwise
             
             
    # deque python - https://www.geeksforgeeks.org/deque-in-python/
